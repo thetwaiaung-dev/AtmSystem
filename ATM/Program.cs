@@ -1,7 +1,14 @@
+using ATM;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+ConfigureServices(builder.Services);
+builder.Services.AddDbContext<AtmDbContext>(option =>
+{
+    string? connectionString = builder.Configuration.GetConnectionString("con");
+    option.UseSqlServer();
+});
 
 var app = builder.Build();
 
@@ -25,3 +32,10 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+static void ConfigureServices(IServiceCollection services)
+{
+    // Add services to the container.
+    services.AddControllersWithViews();
+    
+}
