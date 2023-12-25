@@ -36,6 +36,7 @@ app.Run();
 static void ConfigureServices(IServiceCollection services)
 {
     // Add services to the container.
+    services.AddTransient<AtmDbContext>();
     services.AddControllersWithViews();
     
 }

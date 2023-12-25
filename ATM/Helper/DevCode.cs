@@ -11,7 +11,7 @@ public static class DevCode
         {
             digits.Add(random.Next(0, 9));
         }
-
+        
         var oddList = GetOddListLong(digits).ToList();
         var evenList = GetEvenListLong(digits).ToList();
         var newEvenList = GetNewEvenListLong(evenList).ToList();
@@ -21,7 +21,6 @@ public static class DevCode
             digits.Clear();
             goto regenerate;
         }
-
         var uniqueNumber = string.Join("", digits.Select((i, index) => (index + 1) % 4 == 0 ? i + " " : i.ToString()));
         return uniqueNumber;
     }
@@ -40,7 +39,7 @@ public static class DevCode
         return (oddValue + evenValue) % 10 == 0;
     }
 
-    private static string SplitSpace(this string cardNumber)
+    public static string SplitSpace(this string cardNumber)
     {
         var splitCardNumber = new string[] { };
         if (!cardNumber.Contains(" "))
@@ -99,5 +98,26 @@ public static class DevCode
         }
 
         return newEvenNumber;
+    }
+}
+
+public class Helper
+{
+    private readonly AtmDbContext _db;
+
+    public Helper(AtmDbContext db)
+    {
+        _db = db;
+    }
+
+    public Helper() {}
+    
+    public string GetAtmCode()
+    {
+        regenerate:
+        var atmCode = DevCode.GenerateAtmCode().SplitSpace();
+        var dbAtmCode = _db.AtmCard.Select(x => x.CardNo).ToString();
+        if (atmCode != dbAtmCode) return atmCode;
+        goto regenerate;
     }
 }

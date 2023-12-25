@@ -1,12 +1,12 @@
 using ATM.Helper;
+using ATM.Service;
 
 namespace ATM.Models;
 
 public class AtmCardRequestModel
 {
-
-    public string CardNo => DevCode.GenerateAtmCode();
-
+    Helper.Helper helper = new();
+    public string CardNo => helper.GetAtmCode();
     public int Amount { get; set; }
     
     public int UserId { get; set; }
