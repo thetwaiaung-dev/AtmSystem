@@ -8,7 +8,7 @@ namespace ATM.Models
     {
         [Key]
         public int Id { get; set; }
-        public int CardNo { get; set; }
+        public string CardNo { get; set; }
         public int Amount { get; set; }
 
         public int UserId { get; set; }
