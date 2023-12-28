@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\ATM.csproj": {}
+    "D:\\C#\\ATM\\ATMSystem\\ATM\\ATM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\ATM.csproj": {
+    "D:\\C#\\ATM\\ATMSystem\\ATM\\ATM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\ATM.csproj",
+        "projectUniqueName": "D:\\C#\\ATM\\ATMSystem\\ATM\\ATM.csproj",
         "projectName": "ATM",
-        "projectPath": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\ATM.csproj",
-        "packagesPath": "C:\\Users\\Sithura Myo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\obj\\",
+        "projectPath": "D:\\C#\\ATM\\ATMSystem\\ATM\\ATM.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\ATM\\ATMSystem\\ATM\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Sithura Myo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

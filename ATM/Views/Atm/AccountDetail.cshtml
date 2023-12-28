@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Account Detail";
 }
+@model AtmCardRequestModel
 
 @section styleSheet{
     <link href="~/css/accountdetails.css" rel="stylesheet" />
@@ -38,7 +39,7 @@
                         <h4 class="text-uppercase"><span class="fw-lighter">Card No</span></h4>
                     </div>
                     <div class="col">
-                        <h4 class="text-uppercase balance ">231 687 221</h4>
+                        <h4 class="text-uppercase balance ">@Model.CardNo</h4>
                     </div>
                 </div>
             </div>

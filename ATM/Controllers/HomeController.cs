@@ -1,4 +1,5 @@
 ﻿using ATM.Models;
+using ATM.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,10 +8,22 @@ namespace ATM.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly HelperService _helperService;
+        private readonly AtmService _atmService;
+        private readonly UserService _userService;
+        private readonly AtmDbContext _dbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+                                HelperService helperService,
+                                AtmService atmService,
+                                UserService userService,
+                                AtmDbContext dbContext)
         {
             _logger = logger;
+            _helperService = helperService;
+            _atmService = atmService;
+            _userService = userService;
+            _dbContext = dbContext;
         }
 
         public IActionResult Index()
@@ -23,10 +36,24 @@ namespace ATM.Controllers
             return View();
         }
 
-        public IActionResult Register() 
+        public IActionResult Register()
         {
-            return View();
+            return View(new AtmCardRequestModel());
         }
+
+        [HttpPost]
+        public IActionResult Register(AtmCardRequestModel request)
+        {
+            UserModel? user = request.ChangeUser();
+            int result = _atmService.SaveUserAndAtm(user);
+            if (result > 0)
+            {
+                return Redirect("Login");
+            }
+
+            return View("Register", request);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

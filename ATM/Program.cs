@@ -1,14 +1,22 @@
 using ATM;
+using ATM.Helper;
+using ATM.Models;
+using ATM.Service;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-ConfigureServices(builder.Services);
+builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AtmDbContext>(option =>
 {
-    string? connectionString = builder.Configuration.GetConnectionString("con");
-    option.UseSqlServer();
-});
+    option.UseSqlServer(builder.Configuration.GetConnectionString("con"));
+}, ServiceLifetime.Transient, ServiceLifetime.Transient);
+
+builder.Services.AddTransient<AtmService>();
+builder.Services.AddTransient<HelperService>();
+builder.Services.AddTransient<UserService>();
+
 
 var app = builder.Build();
 
@@ -33,10 +41,3 @@ app.MapControllerRoute(
 
 app.Run();
 
-static void ConfigureServices(IServiceCollection services)
-{
-    // Add services to the container.
-    services.AddTransient<AtmDbContext>();
-    services.AddControllersWithViews();
-    
-}

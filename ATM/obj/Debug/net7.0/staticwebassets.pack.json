@@ -1,51 +1,51 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ATM.bundle.scp.css",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ATM.bundle.scp.css",
       "PackagePath": "staticwebassets\\ATM.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\ATM photo.avif",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\ATM photo.avif",
       "PackagePath": "staticwebassets\\ATM photo.avif"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\AtmPhoto3.jpg",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\AtmPhoto3.jpg",
       "PackagePath": "staticwebassets\\AtmPhoto3.jpg"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\atmPhoto.jpg",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\atmPhoto.jpg",
       "PackagePath": "staticwebassets\\atmPhoto.jpg"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\atmPhoto2.jpg",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\atmPhoto2.jpg",
       "PackagePath": "staticwebassets\\atmPhoto2.jpg"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\css\\accountDetails.css",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\css\\accountDetails.css",
       "PackagePath": "staticwebassets\\css\\accountDetails.css"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\css\\site.css",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\deposit_vault.png",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\deposit_vault.png",
       "PackagePath": "staticwebassets\\deposit_vault.png"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\favicon.ico",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\js\\atmLogin.js",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\js\\atmLogin.js",
       "PackagePath": "staticwebassets\\js\\atmLogin.js"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\js\\site.js",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Sithura Myo\\Desktop\\Practic\\C#\\AtmSystem\\ATM\\wwwroot\\quick_cash.png",
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\quick_cash.png",
       "PackagePath": "staticwebassets\\quick_cash.png"
     },
     {

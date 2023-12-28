@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace ATM.Helper;
 
 public static class DevCode
@@ -6,12 +8,12 @@ public static class DevCode
     {
         var random = new Random();
         var digits = new List<long>(16);
-        regenerate:
+    regenerate:
         for (var i = 0; i < 16; i++)
         {
             digits.Add(random.Next(0, 9));
         }
-        
+
         var oddList = GetOddListLong(digits).ToList();
         var evenList = GetEvenListLong(digits).ToList();
         var newEvenList = GetNewEvenListLong(evenList).ToList();
@@ -98,26 +100,5 @@ public static class DevCode
         }
 
         return newEvenNumber;
-    }
-}
-
-public class Helper
-{
-    private readonly AtmDbContext _db;
-
-    public Helper(AtmDbContext db)
-    {
-        _db = db;
-    }
-
-    public Helper() {}
-    
-    public string GetAtmCode()
-    {
-        regenerate:
-        var atmCode = DevCode.GenerateAtmCode().SplitSpace();
-        var dbAtmCode = _db.AtmCard.Select(x => x.CardNo).ToString();
-        if (atmCode != dbAtmCode) return atmCode;
-        goto regenerate;
     }
 }
