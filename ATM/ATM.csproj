@@ -7,6 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\notiflix\**" />
+    <Content Remove="wwwroot\notiflix\**" />
+    <EmbeddedResource Remove="wwwroot\notiflix\**" />
+    <None Remove="wwwroot\notiflix\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\alertBox.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\alertBox.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\alertBox.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
   </ItemGroup>

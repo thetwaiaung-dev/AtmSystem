@@ -71,4 +71,9 @@ public class AtmService
     {
         return _context.AtmCard.AsNoTracking().FirstOrDefault(x => x.UserId == userId);
     }
+
+    public AtmCardModel GetAtmCardByCartNo(string cardNo)
+    {
+        return _context.AtmCard.AsNoTracking().FirstOrDefault(x => x.CardNo == cardNo);
+    }
 }

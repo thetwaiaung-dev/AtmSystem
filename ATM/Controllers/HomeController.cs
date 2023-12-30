@@ -1,4 +1,5 @@
-﻿using ATM.Models;
+﻿using ATM.Helper;
+using ATM.Models;
 using ATM.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -34,6 +35,33 @@ namespace ATM.Controllers
         public IActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult LoginAtmCard(string cardNo)
+        {
+            MessageModel model = new MessageModel();
+
+            var validAtm = DevCode.IsValidAtmCode(cardNo);
+            if (!validAtm)
+            {
+                model.IsSuccess = false;
+                model.Message = "Card No is invalid.";
+                return Json(model);
+            }
+
+            AtmCardModel atmCard = _atmService.GetAtmCardByCartNo(cardNo);
+            if (atmCard == null)
+            {
+                model.IsSuccess = false;
+                model.Message = "Card No is Wrong.";
+                return Json(model);
+            }
+
+            model.IsSuccess = true;
+            model.Message = "Success";
+            model.UserId = atmCard.UserId;
+            return Json(model);
         }
 
         public IActionResult Register()
