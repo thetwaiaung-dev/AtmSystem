@@ -66,4 +66,9 @@ public class AtmService
         }
         return result;
     }
+
+    public AtmCardModel GetAtmCard(int userId)
+    {
+        return _context.AtmCard.AsNoTracking().FirstOrDefault(x => x.UserId == userId);
+    }
 }

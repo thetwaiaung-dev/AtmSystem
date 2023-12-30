@@ -22,4 +22,18 @@ public static class ChangeModel
             Password = requestModel.Password,
         };
     }
+
+    public static AtmCardRequestModel Change(UserModel user, AtmCardModel atmCard)
+    {
+        if (user == null || atmCard == null) return null;
+        return new AtmCardRequestModel()
+        {
+            CardNo = atmCard.CardNo,
+            Amount = atmCard.Amount,
+            UserId = user.Id,
+            Name = user.Name,
+            Email = user.Email,
+            Password = user.Password,
+        };
+    }
 }

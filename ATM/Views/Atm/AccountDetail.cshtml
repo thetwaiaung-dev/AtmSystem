@@ -7,28 +7,11 @@
     <link href="~/css/accountdetails.css" rel="stylesheet" />
 }
 
-<div class="col-md-6 d-flex align-items-center p-0">
+<div class="col-md-7 d-flex align-items-center p-0">
     <div class="row w-100 align-items-center">
-        <div class="col-md-3 p-0">
-            <div class="card p-2 bg-light mb-3 align-items-center">
-                <button class="btn "
-                        style="background-color: #0d888e;width: 8rem;font-size: 20px;color: white;">
-                    <i class="fa-solid fa-house"></i>HOME
-                </button>
-            </div>
-            <div class="card p-2 bg-light mb-3 align-items-center">
-                <button class="btn "
-                        style="background-color: #374f67;width: 8rem;font-size: 20px;color: white;">
-                    <i class="fa-solid fa-chevron-left"></i>BACK
-                </button>
-            </div>
-            <div class="card p-2 bg-light align-items-center">
-                <button class="btn "
-                        style="background-color: #2d8cec;width: 8rem;font-size: 20px;color: white;">
-                    <i class="fa-solid fa-right-from-bracket"></i>LOGOUT
-                </button>
-            </div>
-        </div>
+        <!--nav bar-->
+        @await Html.PartialAsync("_Navbar")
+
         <div class="col-md-9">
             <div class=" d-flex justify-content-center">
                 <h1>ACCOUNT DETAILS</h1>
@@ -39,7 +22,7 @@
                         <h4 class="text-uppercase"><span class="fw-lighter">Card No</span></h4>
                     </div>
                     <div class="col">
-                        <h4 class="text-uppercase balance ">@Model.CardNo</h4>
+                        <h5 class="text-uppercase balance ">@Model.CardNo</h5>
                     </div>
                 </div>
             </div>
@@ -49,20 +32,20 @@
                         <h4 class="text-uppercase"><span class="fw-lighter">Balance</span></h4>
                     </div>
                     <div class="col">
-                        <h4 class="balance ">1,103,500.32 Ks</h4>
+                        <h5 class="balance ">@Model.Amount Ks</h5>
                     </div>
                 </div>
             </div>
             <div class="row px-2 ">
-                <button class="col ms-2 p-0 card align-items-center deposit-btn">
+                <a asp-controller="atm" asp-action="withdrawl" class="nav-link col ms-2 p-0 card align-items-center deposit-btn">
                     <img src="~/deposit_vault.png" alt="Make a Deposit"
                          class="tile-image big-illustration" />
                     <h3 class="tile-title">Deposit</h3>
-                </button>
-                <button class="col ms-2 p-0 card align-items-center w-50 withdrawl-btn">
+                </a>
+                <a asp-controller="atm" asp-action="deposit" class="nav-link col ms-2 p-0 card align-items-center w-50 withdrawl-btn">
                     <img src="~/quick_cash.png" alt="Withdraw Funds" class="tile-image" />
                     <h3 class="tile-title">Withdrawl</h3>
-                </button>
+                </a>
             </div>
         </div>
     </div>

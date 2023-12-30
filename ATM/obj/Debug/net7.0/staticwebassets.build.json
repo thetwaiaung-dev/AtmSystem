@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Buh2/3SZJJXQKjmWi7oo5EaxkWFo8RHIKPa4F6Uw/5I=",
+  "Hash": "s0loIKV7ZIMO3IWw9QM7GwXQgCzGYjjzctVnBWL2yng=",
   "Source": "ATM",
   "BasePath": "_content/ATM",
   "Mode": "Default",
@@ -153,6 +153,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\css\\withdrawl.css",
+      "SourceId": "ATM",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\",
+      "BasePath": "_content/ATM",
+      "RelativePath": "css/withdrawl.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\withdrawl.css"
+    },
+    {
       "Identity": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\deposit_vault.png",
       "SourceId": "ATM",
       "SourceType": "Discovered",
@@ -202,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\atmLogin.js"
+    },
+    {
+      "Identity": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\js\\atmwithdrawl.js",
+      "SourceId": "ATM",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\",
+      "BasePath": "_content/ATM",
+      "RelativePath": "js/atmwithdrawl.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\atmwithdrawl.js"
     },
     {
       "Identity": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\js\\site.js",

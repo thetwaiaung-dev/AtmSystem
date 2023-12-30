@@ -7,15 +7,11 @@ using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
+ConfigureService(builder.Services);
 builder.Services.AddDbContext<AtmDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("con"));
 }, ServiceLifetime.Transient, ServiceLifetime.Transient);
-
-builder.Services.AddTransient<AtmService>();
-builder.Services.AddTransient<HelperService>();
-builder.Services.AddTransient<UserService>();
 
 
 var app = builder.Build();
@@ -40,4 +36,14 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+static void ConfigureService(IServiceCollection services)
+{
+    services.AddControllersWithViews();
+
+
+    services.AddTransient<AtmService>();
+    services.AddTransient<HelperService>();
+    services.AddTransient<UserService>();
+}
 

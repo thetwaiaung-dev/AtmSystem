@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\css\\withdrawl.css",
+      "PackagePath": "staticwebassets\\css\\withdrawl.css"
+    },
+    {
       "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\deposit_vault.png",
       "PackagePath": "staticwebassets\\deposit_vault.png"
     },
@@ -39,6 +43,10 @@
     {
       "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\js\\atmLogin.js",
       "PackagePath": "staticwebassets\\js\\atmLogin.js"
+    },
+    {
+      "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\js\\atmwithdrawl.js",
+      "PackagePath": "staticwebassets\\js\\atmwithdrawl.js"
     },
     {
       "Id": "D:\\C#\\ATM\\ATMSystem\\ATM\\wwwroot\\js\\site.js",

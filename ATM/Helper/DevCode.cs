@@ -101,4 +101,9 @@ public static class DevCode
 
         return newEvenNumber;
     }
+
+    public static string FormatAtmCard(string card)
+    {
+        return $"{card.Substring(0, 4)} {card.Substring(4, 4)} {card.Substring(8, 4)} {card.Substring(12)}";
+    }
 }

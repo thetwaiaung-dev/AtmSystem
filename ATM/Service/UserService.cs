@@ -1,4 +1,5 @@
 ﻿using ATM.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ATM.Service
 {
@@ -17,6 +18,12 @@ namespace ATM.Service
             _context.SaveChanges();
 
             return user.Id;
+        }
+
+        public UserModel GetUser(int id) 
+        {
+            UserModel user = _context.User.Find(id);
+            return user;
         }
     }
 }
