@@ -16,8 +16,17 @@
 
     @RenderSection("styleSheet",required:false);
 </head>
-
 <body>
+
+
+    @{
+        string message = null;
+
+        if (TempData["Message"] != null)
+        {
+            message = TempData["Message"].ToString();
+        }
+    }
     <div class="container mt-3">
 
         <div class="d-flex justify-content-center">
@@ -46,6 +55,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- notiflix alert link -->
     <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.6/dist/notiflix-aio-3.2.6.min.js"></script>
+    <!--Get Message Data-->
+    <script>
+        var message = @Html.Raw(JsonConvert.SerializeObject(message));
+    </script>
     <!-- alert box scripts-->
     <script src="~/js/alertbox.js" asp-append-version="true"></script>
 

@@ -1,3 +1,8 @@
+
+if (message != null) {
+    Swal.fire(message);
+}
+
 function errorMessage(message) {
     Swal.fire({
         icon: "error",

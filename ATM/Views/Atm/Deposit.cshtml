@@ -1,9 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Deposit Cash";
 }
+@model AtmCardRequestModel
 
 @section styleSheet{
-    <link href="~/css/withdrawl.css" rel="stylesheet" />
+    <link href="~/css/withdrawl.css" rel="stylesheet" asp-append-version="true" />
 }
 
 <div class="col-md-7 d-flex align-items-center p-0 ">
@@ -12,7 +13,7 @@
         @await Html.PartialAsync("_Navbar")
 
         <div class="col-md-9">
-            <div class="card p-2 mb-3 align-items-center w-100 border border-dark-subtle border-5">
+            <div class="card p-2 mb-3 align-items-center border border-dark-subtle border-5" style="width:35rem">
                 <div>
                     <h3 class="text-uppercase" style="color: rgb(50, 40, 66);">Deposit Cash</h3>
                 </div>
@@ -57,8 +58,10 @@
                     </div>
 
                     <div class="w-100 justify-content-center d-flex mb-3">
-                        <input id="inputNo" style="font-size: 30px;text-align: center;" placeholder="0.00Ks"
-                               class="form-control bg-light border border-3 p-0" type="text" readonly>
+                        <form asp-controller="atm" asp-action="depositatm" method="post" id="deposit-form">
+                            <input id="inputNo" style="font-size: 30px;text-align: center;" placeholder="0.00Ks"
+                                   name="amount" class="form-control bg-light border border-3 p-0" type="text" readonly>
+                        </form>
                     </div>
                     <div class="w-100">
                         <table>
@@ -84,8 +87,8 @@
                                        class="btn btn-lg no-btn w-100" onclick="noClickWithdrawl(5)">5</a>
                                 </td>
                                 <td style="width: 7rem;height:4rem;">
-                                    <button class="text-uppercase btn btn-lg w-100 h-75 btn-withdrawl"
-                                            style="font-size: 15px;">
+                                    <button id="deposit-btn" class="text-uppercase btn btn-lg w-100 h-75 btn-withdrawl"
+                                            type="button" style="font-size: 15px;">
                                         Confirm
                                     </button>
                                 </td>
@@ -128,5 +131,19 @@
 </div>
 
 @section scripts{
-    <script src="~/js/atmwithdrawl.js"></script>
+    <script src="~/js/atmwithdrawl.js" asp-append-version="true"></script>
+    <script>
+        $('#deposit-btn').click(() => {
+
+            var amount = $('#inputNo').val().replace(".00Ks", "");
+            $('#inputNo').val(amount);
+
+            if ($('#inputNo').val() < 5000) {
+                errorMessage("Deposit amount must be greater than 5000Ks.")
+                return;
+            }
+
+            $('#deposit-form').submit();
+        })
+    </script>
 }

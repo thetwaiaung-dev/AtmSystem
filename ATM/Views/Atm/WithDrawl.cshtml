@@ -12,7 +12,7 @@
         @await Html.PartialAsync("_Navbar")
 
         <div class="col-md-9">
-            <div class="card p-2 mb-3 align-items-center w-100 border border-dark-subtle border-5">
+            <div class="card p-2 mb-3 align-items-center border border-dark-subtle border-5" style="width:35rem">
                 <div>
                     <h3 class="text-uppercase" style="color: rgb(50, 40, 66);">Withdrawl funds</h3>
                 </div>
@@ -57,8 +57,10 @@
                     </div>
 
                     <div class="w-100 justify-content-center d-flex mb-3">
-                        <input id="inputNo" style="font-size: 30px;text-align: center;" placeholder="0.00Ks"
-                               class="form-control bg-light border border-3 p-0" type="text" readonly>
+                        <form asp-controller="atm" asp-action="withdrawlatm" method="post" id="withdrawl-form">
+                            <input id="inputNo" style="font-size: 30px;text-align: center;" placeholder="0.00Ks"
+                                   name="amount" class="form-control bg-light border border-3 p-0" type="text" readonly>
+                        </form>
                     </div>
                     <div class="w-100">
                         <table>
@@ -85,7 +87,7 @@
                                 </td>
                                 <td style="width: 7rem;height:4rem;">
                                     <button class="text-uppercase btn btn-lg w-100 h-75 btn-withdrawl"
-                                            style="font-size: 15px;">
+                                            id="withdrawl-btn" type="button" style="font-size: 15px;">
                                         Confirm
                                     </button>
                                 </td>
@@ -129,5 +131,14 @@
 
 @section scripts{
     <script src="~/js/atmwithdrawl.js"></script>
+    <script>
+        $('#withdrawl-btn').click(()=>{
+
+            var amount = $('#inputNo').val().replace(".00Ks", "");
+            $('#inputNo').val(amount);
+
+            $('#withdrawl-form').submit();
+        })
+    </script>
 }
 

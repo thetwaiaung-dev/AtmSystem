@@ -29,6 +29,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -41,6 +42,12 @@ static void ConfigureService(IServiceCollection services)
 {
     services.AddControllersWithViews();
 
+    services.AddAuthentication(Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults
+        .AuthenticationScheme).AddCookie(op =>
+        {
+            op.Cookie.Name = "AtmCookie";
+            op.LoginPath = "/home/login";
+        });
 
     services.AddTransient<AtmService>();
     services.AddTransient<HelperService>();

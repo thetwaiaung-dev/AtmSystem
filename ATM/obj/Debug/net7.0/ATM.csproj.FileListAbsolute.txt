@@ -139,3 +139,4 @@ D:\C#\ATM\ATMSystem\ATM\obj\Debug\net7.0\refint\ATM.dll
 D:\C#\ATM\ATMSystem\ATM\obj\Debug\net7.0\ATM.pdb
 D:\C#\ATM\ATMSystem\ATM\obj\Debug\net7.0\ATM.genruntimeconfig.cache
 D:\C#\ATM\ATMSystem\ATM\obj\Debug\net7.0\ref\ATM.dll
+D:\C#\ATM\ATMSystem\ATM\bin\Debug\net7.0\Newtonsoft.Json.dll

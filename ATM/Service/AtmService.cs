@@ -69,11 +69,16 @@ public class AtmService
 
     public AtmCardModel GetAtmCard(int userId)
     {
-        return _context.AtmCard.AsNoTracking().FirstOrDefault(x => x.UserId == userId);
+        return _context.AtmCard.FirstOrDefault(x => x.UserId == userId);
     }
 
     public AtmCardModel GetAtmCardByCartNo(string cardNo)
     {
         return _context.AtmCard.AsNoTracking().FirstOrDefault(x => x.CardNo == cardNo);
+    }
+
+    public int UdpateAtmCard()
+    {
+        return _context.SaveChanges();
     }
 }

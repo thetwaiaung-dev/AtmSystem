@@ -1,8 +1,11 @@
 ﻿using ATM.Helper;
 using ATM.Models;
 using ATM.Service;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace ATM.Controllers
 {
@@ -64,6 +67,57 @@ namespace ATM.Controllers
             return Json(model);
         }
 
+        public IActionResult LoginUser(int id)
+        {
+            UserModel user = _userService.GetUser(id);
+            if (user == null)
+            {
+                TempData["Message"] = "Please Login again.";
+                return Redirect("/home/login");
+            }
+
+            AtmCardRequestModel model = new AtmCardRequestModel()
+            {
+                Name = user.Name,
+                UserId = user.Id,
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> LoginUser(int userId, string pin)
+        {
+            MessageModel model = new MessageModel();
+
+            UserModel user = _userService.GetUser(userId);
+            if (user.Password != pin)
+            {
+                model.IsSuccess = false;
+                model.Message = "Pin No is invalid";
+                return Json(model);
+            }
+
+            var claims = new List<Claim>()
+            {
+                 new Claim(ClaimTypes.NameIdentifier,Convert.ToString(user.Id)),
+                 new Claim(ClaimTypes.Name,user.Name),
+            };
+            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var principal = new ClaimsPrincipal(identity);
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+            model.IsSuccess = true;
+            model.Message = "Login Successful.";
+            model.UserId = userId;
+            return Json(model);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index","home");
+        }
+
         public IActionResult Register()
         {
             return View(new AtmCardRequestModel());
@@ -81,7 +135,6 @@ namespace ATM.Controllers
 
             return View("Register", request);
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
